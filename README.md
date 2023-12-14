@@ -14,7 +14,7 @@ The dataset 'test_df' contains 3,263 tweets with their text, location, and keywo
 I explored the 'keyword' feature in the Miscellaneous notebook, but ultimately decided to remove it as well as the 'location' feature, because they were not relevant to my project goal.
 
 I created a histogram to view the proportion of the tweets in train_df that were about a disaster or not:
-<img src="images/proportions.png" alt="Target Proportions">
+<img src="images/proportions.png" alt="Target Proportions", height=300, width=400>
     
 I also calculated the probability of a tweet in train_df being about a disaster or not. It was found that there is about a 43% chance that a tweet is about a disaster and about a 57% chance that it is not.
 
