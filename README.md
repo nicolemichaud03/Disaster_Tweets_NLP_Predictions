@@ -25,9 +25,7 @@ Next, I performed a train-test split on train_df the use when creating models to
 
 ## Modeling
 
-The classifier I am using in my models is a Multinomial Naive Bayes classifier. I chose to use this because it is commonly used to classify text data, due to reasons such as the fact that it is scalable and doesn't require large amounts of training data compared to other classifiers.
-
-Using a pipeling, I created a baseline model that was vectorized using CountVectorizer. This model performed pretty well, with an average F1 score of about 79.91% and an accuracy score of about 80.83%.
+Using a pipeling, I created a baseline Multinomial Naive Bayes model that was vectorized using CountVectorizer. This model performed pretty well, with an average F1 score of about 79.91% and an accuracy score of about 80.83%.
 
 I proceeded to try different models including one that was TF-IDF Vectorized, one that included bigrams as well as single words, one with stemmed words, and one with lemmatized words. The model that performed the best so far was the stemmed model, with an F1 score of about 80.22% and an accuracy score of about 80.83%
 
@@ -35,7 +33,7 @@ To try and improve this model even more, I performed a GridSearch on the model p
 
 With these tuned hyperparameters, the stemmed model performed very slightly better, but was still the best model so far with an F1 score of 80.23% and an accuracy score of 80.83%
 
-This model gave 943 True Positives, 597 True Negatives, 148 False Negatives, and 216 False Positives. In this case, it would be better to have a false positive than a false negative, so this is good.
+This model gave 943 True Negatives, 597 True Positives, 148 False Positives, and 216 False Negatives. In this case, both false positives and false negatives can be costly.
 
 ### Fitting best model on test data and generating predictions
 Before creating predictions on the sample submission file, I wanted to try it on the test_df to make sure it works. 
@@ -46,5 +44,10 @@ I generated my predictions onto the sample submission file.
 
 ## Conclusion
 
-### Next Steps:
+### Recommendations:
+- Deploy model
+- Continue testing other models to see if performance can be improved
 
+### Next Steps:
+- Use more tweets data
+- Try other types of classifiers/models
