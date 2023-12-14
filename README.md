@@ -1,4 +1,5 @@
-# Phase 4 Project - "Natural Language Processing with Disaster Tweets" (From Kaggle Competition)
+# Text Classification of Tweets: Are they about a real disaster or not?
+(Kaggle Competition "Natural Language Processing with Disaster Tweets")
 
 ## Business Problem
 Data has been accumulated from a number of tweets, some of which are about disasters, some of which are not. By creating a model for Natural Language Processing (NLP), we can predict whether or not a given tweet is about a real disaster or not. This can benefit companies who wish to monitor twitter in the event of an emergency.
@@ -22,28 +23,26 @@ To begin preparing the data for modeling, I created a function to clean the twee
 
 Next, I performed a train-test split on train_df the use when creating models to see how they performed before using them on the test data. I applied my cleaning function to this split data as well.
 
-(top 10 word vis??)
-
-
 ## Modeling
-Using a pipeling, I created a baseline Multinomoial Naive Bayes model that was vectorized using CountVectorizer. This model performed pretty well, with an average F1 score of about 0.7980, an accuracy score of about 0.80 and a precision score of about 0.80.
 
-(Why MNB?)
+The classifier I am using in my models is a Multinomial Naive Bayes classifier. I chose to use this because it is commonly used to classify text data, due to reasons such as the fact that it is scalable and doesn't require large amounts of training data compared to other classifiers.
 
-I proceeded to try different models including one that was TF-IDF Vectorized, one that included bigrams as well as single words, one with stemmed words, and one with lemmatized words. The model that performed the best so far was the stemmed model, with an F1 score of about 0.7996, an accuracy score of about 0.81, and a precision score of about 0.80.
+Using a pipeling, I created a baseline model that was vectorized using CountVectorizer. This model performed pretty well, with an average F1 score of about 79.91% and an accuracy score of about 80.83%.
 
-To try and improve this model even more, I performed a GridSearch on the model parameters alpha and fit_prior. This determined the best value of alpha to be 2.0 and of fit_prior to be True. 
-With these tuned hyperparameters, the stemmed model performed even better, with an F1 score of about 0.8016, an accuracy score of about 0.81, and a precision score of about 0.81.
-(Explanation)
+I proceeded to try different models including one that was TF-IDF Vectorized, one that included bigrams as well as single words, one with stemmed words, and one with lemmatized words. The model that performed the best so far was the stemmed model, with an F1 score of about 80.22% and an accuracy score of about 80.83%
+
+To try and improve this model even more, I performed a GridSearch on the model parameters alpha and fit_prior. This determined the best value of alpha to be 2.0 and of fit_prior to be True. This means that of the options I provided the GridSearch with, the model will perform best with a smoothing parameter of 2 and class prior probabilities as opposed to a uniform prior probability.
+
+With these tuned hyperparameters, the stemmed model performed very slightly better, but was still the best model so far with an F1 score of 80.23% and an accuracy score of 80.83%
+
+This model gave 943 True Positives, 597 True Negatives, 148 False Negatives, and 216 False Positives. In this case, it would be better to have a false positive than a false negative, so this is good.
 
 ### Fitting best model on test data and generating predictions
-I loaded the sample submission file.
-
 Before creating predictions on the sample submission file, I wanted to try it on the test_df to make sure it works. 
 
-It appeared to have worked, as test_df now had a 'target' column with predictions. In the test file, out of 3,263 tweets, the final model classified 1201 as being about a disaster and 2062 as not being about a disaster.
+It appeared to have worked, as test_df now had a 'target' column with predictions. In the test file, out of 3,263 tweets, the final model classified 1230 as being about a disaster and 2033 as not being about a disaster.
 
-I generated my predictions onto the sample submission file.
+I generated my predictions onto the sample submission file. 
 
 ## Conclusion
 
