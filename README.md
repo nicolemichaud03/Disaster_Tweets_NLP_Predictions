@@ -1,5 +1,5 @@
 # Text Classification of Tweets: Are they about a real disaster or not?
-(Kaggle Competition "Natural Language Processing with Disaster Tweets")
+This project and data is sourced from the Kaggle Competition "Natural Language Processing with Disaster Tweets"
 
 ## Business Problem
 Data has been accumulated from a number of tweets, some of which are about disasters, some of which are not. By creating a model for Natural Language Processing (NLP), we can predict whether or not a given tweet is about a real disaster or not. This can benefit companies who wish to monitor twitter in the event of an emergency.
