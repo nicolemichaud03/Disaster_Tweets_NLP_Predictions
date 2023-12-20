@@ -64,7 +64,6 @@ I generated my predictions onto the sample submission file.
 <hr>
 
 ## Contact Me:
-
-LinkedIn: https://www.linkedin.com/in/nicole-michaud2/
-Email: michaud.nicole00@gmail.com
-Blog: https://medium.com/@nicolemichaud03
+- LinkedIn: https://www.linkedin.com/in/nicole-michaud2/
+- Email: michaud.nicole00@gmail.com
+- Blog: https://medium.com/@nicolemichaud03
