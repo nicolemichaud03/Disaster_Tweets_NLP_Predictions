@@ -34,8 +34,9 @@ I proceeded to try different models including one that was TF-IDF Vectorized, on
 To try and improve this model even more, I performed a GridSearch on the model parameters alpha and fit_prior. This determined the best value of alpha to be 2.0 and of fit_prior to be True. This means that of the options I provided the GridSearch with, the model will perform best with a smoothing parameter of 2 and class prior probabilities as opposed to a uniform prior probability.
 
 With these tuned hyperparameters, the stemmed model performed very slightly better, but was still the best model so far with an F1 score of <b>80.23%</b>.
-Classification Report:
-<img src="images/clf_report.png" alt="Classification Report">
+
+Results:
+<img src="images/clf_report2.png" alt="Classification Report">
 
 Confusion Matrix:
 <img src="images/conf_matrix.png" alt="Confusion Matrix">
