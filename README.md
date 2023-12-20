@@ -1,7 +1,7 @@
 # Text Classification of Tweets: Are they about a real disaster or not?
-(This project and data is sourced from the Kaggle Competition "Natural Language Processing with Disaster Tweets")
+##### Project by Nicole Michaud, 12/30/2023
+This project and data is sourced from the Kaggle Competition "Natural Language Processing with Disaster Tweets"
 
-###### Project by Nicole Michaud, 12/30/2023
 
 ## Business Problem
 Data has been accumulated from a number of tweets, some of which are about disasters, some of which are not. By creating a model for Natural Language Processing (NLP), we can predict whether or not a given tweet is about a real disaster or not. This can benefit companies who wish to monitor twitter in the event of an emergency.
@@ -34,7 +34,10 @@ I proceeded to try different models including one that was TF-IDF Vectorized, on
 To try and improve this model even more, I performed a GridSearch on the model parameters alpha and fit_prior. This determined the best value of alpha to be 2.0 and of fit_prior to be True. This means that of the options I provided the GridSearch with, the model will perform best with a smoothing parameter of 2 and class prior probabilities as opposed to a uniform prior probability.
 
 With these tuned hyperparameters, the stemmed model performed very slightly better, but was still the best model so far with an F1 score of <b>80.23%</b>.
+Classification Report:
+<img src="images/clf_report.png" alt="Classification Report">
 
+Confusion Matrix:
 <img src="images/conf_matrix.png" alt="Confusion Matrix">
 
 This model gave <b>943</b> <em>True Negatives</em>, <b>597</b> <em>True Positives</em>, <b>148</b> <em>False Positives</em>, and <b>216</b> <em>False Negatives</em>. In this case, both false positives and false negatives can be costly.
