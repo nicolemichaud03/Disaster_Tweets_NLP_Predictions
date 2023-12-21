@@ -54,8 +54,6 @@ I generated my predictions onto the sample submission file.
 
 ### Recommendations:
 - Model should be deployed to monitor twitter for disaster tweets
-
-### Next Steps:
 - Continue testing other models to see if performance can be improved
     - Use more tweets data
     - Use word embeddings
